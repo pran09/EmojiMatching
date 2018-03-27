@@ -93,15 +93,21 @@ class MatchingGame: CustomStringConvertible {
     }
     
     func pressedCard(atIndex: Int) {
-        cardStates[atIndex] = .shown
-        if checkEnumEquality() == 1 { //gameState is first turn
-            gameState = .secondSelection(atIndex)
-            firstIndex = atIndex
-        } else if checkEnumEquality() == 2 { //gameState is second turn
+        switch cardStates[atIndex] {
+        case .hidden:
             cardStates[atIndex] = .shown
-            secondIndex = atIndex
-            gameState = .turnComplete(firstIndex, secondIndex)
+            if checkEnumEquality() == 1 { //gameState is first turn
+                gameState = .secondSelection(atIndex)
+                firstIndex = atIndex
+            } else if checkEnumEquality() == 2 { //gameState is second turn
+                cardStates[atIndex] = .shown
+                secondIndex = atIndex
+                gameState = .turnComplete(firstIndex, secondIndex)
+            }
+        default:
+            break
         }
+        
     }
     
     func checkEnumEquality() -> Int {

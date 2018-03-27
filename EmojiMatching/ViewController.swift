@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pressedNewGame(_ sender: Any) {
+        blockingUIIntentionally = false
         game = MatchingGame(numPairs: 10)
         updateView()
     }
@@ -30,6 +31,8 @@ class ViewController: UIViewController {
         }
         let cardButton = sender as! UIButton
         let cardIndex = cardButton.tag
+        game.pressedCard(atIndex: cardIndex)
+        updateView()
         switch game.gameState {
         case .turnComplete:
             blockingUIIntentionally = true
@@ -39,9 +42,9 @@ class ViewController: UIViewController {
                 self.updateView()
             }
         default:
-            game.pressedCard(atIndex: cardIndex)
             updateView()
         }
+        print(game)
     }
     
     func updateView() {
@@ -54,6 +57,19 @@ class ViewController: UIViewController {
             case .removed:
                 gameButtons[i].setTitle("", for: UIControlState.normal)
             }
+        }
+        
+        var gameDone: Bool = true
+        for j in 0..<game.cardStates.count {
+            switch game.cardStates[j] {
+            case .removed:
+                continue
+            default:
+                gameDone = false //card state is still on screen so still at least one pair left
+            }
+        }
+        if gameDone {
+            blockingUIIntentionally = true
         }
     }
     
