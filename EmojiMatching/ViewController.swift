@@ -17,12 +17,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        print("\n")
+        print(game!)
     }
     
     @IBAction func pressedNewGame(_ sender: Any) {
         blockingUIIntentionally = false
         game = MatchingGame(numPairs: 10)
-        updateView()
+        viewDidLoad()
     }
     
     @IBAction func pressedCard(_ sender: Any) {
@@ -31,38 +33,39 @@ class ViewController: UIViewController {
         }
         let cardButton = sender as! UIButton
         let cardIndex = cardButton.tag
-        game.pressedCard(atIndex: cardIndex)
+        game?.pressedCard(cardIndex)
         updateView()
-        switch game.gameState {
-        case .turnComplete:
+        switch game?.gameState {
+        case .turnComplete?:
             blockingUIIntentionally = true
             delay(1.2) {
-                self.game.startNewTurn()
+                self.game?.startNewTurn()
                 self.blockingUIIntentionally = false
                 self.updateView()
             }
         default:
             updateView()
         }
-        print(game)
     }
     
     func updateView() {
-        for i in 0..<game.cardStates.count {
-            switch game.cardStates[i] {
-            case .shown:
-                gameButtons[i].setTitle(String(game.cards[i]), for: UIControlState.normal)
-            case .hidden:
-                gameButtons[i].setTitle(String(game.cardBack), for: UIControlState.normal)
-            case .removed:
+        for i in 0..<20 {
+            switch game?.getCardState(i) {
+            case .shown?:
+                gameButtons[i].setTitle((game?.cards[i] as! String), for: UIControlState.normal)
+            case .hidden?:
+                gameButtons[i].setTitle(game?.cardBack, for: UIControlState.normal)
+            case .removed?:
                 gameButtons[i].setTitle("", for: UIControlState.normal)
+            default:
+                break
             }
         }
         
         var gameDone: Bool = true
-        for j in 0..<game.cardStates.count {
-            switch game.cardStates[j] {
-            case .removed:
+        for j in 0..<20 {
+            switch game?.getCardState(j) {
+            case .removed?:
                 continue
             default:
                 gameDone = false //card state is still on screen so still at least one pair left

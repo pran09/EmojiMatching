@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A9DB4A2206A0D8C0014D68B /* MatchingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DB4A1206A0D8C0014D68B /* MatchingGame.swift */; };
 		0AF056882068A10C00D9A756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF056872068A10C00D9A756 /* AppDelegate.swift */; };
 		0AF0568A2068A10C00D9A756 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF056892068A10C00D9A756 /* ViewController.swift */; };
 		0AF0568D2068A10C00D9A756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF0568B2068A10C00D9A756 /* Main.storyboard */; };
@@ -20,10 +19,10 @@
 		0AF056A42068A21E00D9A756 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF0569D2068A21D00D9A756 /* Icon-60.png */; };
 		0AF056A52068A21E00D9A756 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF0569E2068A21D00D9A756 /* Icon-Small-50.png */; };
 		0AF056A62068A21E00D9A756 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AF0569F2068A21D00D9A756 /* Icon-Small-50@2x.png */; };
+		89A126162075D3B900F2E1C8 /* MatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A126152075D3B900F2E1C8 /* MatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A9DB4A1206A0D8C0014D68B /* MatchingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingGame.swift; sourceTree = "<group>"; };
 		0AF056842068A10C00D9A756 /* EmojiMatching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiMatching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF056872068A10C00D9A756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AF056892068A10C00D9A756 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +37,9 @@
 		0AF0569D2068A21D00D9A756 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		0AF0569E2068A21D00D9A756 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		0AF0569F2068A21D00D9A756 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		89A126132075D3B800F2E1C8 /* EmojiMatching-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmojiMatching-Bridging-Header.h"; sourceTree = "<group>"; };
+		89A126142075D3B900F2E1C8 /* MatchingGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchingGame.h; sourceTree = "<group>"; };
+		89A126152075D3B900F2E1C8 /* MatchingGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,9 @@
 				0AF0569F2068A21D00D9A756 /* Icon-Small-50@2x.png */,
 				0AF0569B2068A21D00D9A756 /* Icon.png */,
 				0AF056992068A21D00D9A756 /* Icon@2x.png */,
-				0A9DB4A1206A0D8C0014D68B /* MatchingGame.swift */,
+				89A126142075D3B900F2E1C8 /* MatchingGame.h */,
+				89A126152075D3B900F2E1C8 /* MatchingGame.m */,
+				89A126132075D3B800F2E1C8 /* EmojiMatching-Bridging-Header.h */,
 			);
 			path = EmojiMatching;
 			sourceTree = "<group>";
@@ -115,11 +119,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Praneet CSSE484";
 				TargetAttributes = {
 					0AF056832068A10C00D9A756 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -169,7 +174,7 @@
 			files = (
 				0AF0568A2068A10C00D9A756 /* ViewController.swift in Sources */,
 				0AF056882068A10C00D9A756 /* AppDelegate.swift in Sources */,
-				0A9DB4A2206A0D8C0014D68B /* MatchingGame.swift in Sources */,
+				89A126162075D3B900F2E1C8 /* MatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +214,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -216,6 +222,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -266,6 +273,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -273,6 +281,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -306,11 +315,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EmojiMatching/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.chakrap.EmojiMatching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EmojiMatching/EmojiMatching-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -320,11 +332,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EmojiMatching/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.chakrap.EmojiMatching;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EmojiMatching/EmojiMatching-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
