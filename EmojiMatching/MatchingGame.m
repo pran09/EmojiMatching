@@ -24,22 +24,6 @@ NSArray* allEmojiCharacters;
         
         allCardBacks = [@"🎆,🎇,🌈,🌅,🌇,🌉,🌃,🌄,⛺,⛲,🚢,🌌,🌋,🗽" componentsSeparatedByString:@","];
         allEmojiCharacters = [@"🚁,🐴,🐇,🐢,🐱,🐌,🐒,🐞,🐫,🐠,🐬,🐩,🐶,🐰,🐼,⛄,🌸,⛅,🐸,🐳,❄,❤,🐝,🌺,🌼,🌽,🍌,🍎,🍡,🏡,🌻,🍉,🍒,🍦,👠,🐧,👛,🐛,🐘,🐨,😃,🐻,🐹,🐲,🐊,🐙" componentsSeparatedByString:@","];
-        
-//        // Randomly select emojiSymbols
-//        NSMutableArray* emojiSymbolsUsed = [[NSMutableArray alloc] init];
-//        while (emojiSymbolsUsed.count < numPairs) {
-//            NSString* symbol = allEmojiCharacters[arc4random_uniform((UInt32) allEmojiCharacters.count)];
-//            if (![emojiSymbolsUsed containsObject:symbol]) {
-//                [emojiSymbolsUsed addObject:symbol];
-//            }
-//        }
-//        [emojiSymbolsUsed addObjectsFromArray:emojiSymbolsUsed];
-//        // Shuffle the NSMutableArray before converting it to an NSArray.
-//        for (int i = 0; i < emojiSymbolsUsed.count; ++i) {
-//            UInt32 j = arc4random_uniform((UInt32) emojiSymbolsUsed.count - i) + i;
-//            [emojiSymbolsUsed exchangeObjectAtIndex:i withObjectAtIndex:j];
-//        }
-//        self.cards = [NSArray arrayWithArray:emojiSymbolsUsed];
 
         [self newGame:numPairs];
         // Randomly select a card back.
@@ -53,6 +37,7 @@ NSArray* allEmojiCharacters;
     return self;
 }
 
+// took some of the init code and put it here for class-wide use
 - (void) newGame:(NSInteger) numPairs {
     NSMutableArray* emojiSymbolsUsed = [[NSMutableArray alloc] init];
     while (emojiSymbolsUsed.count < numPairs) {
